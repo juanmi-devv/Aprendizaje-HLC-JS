@@ -15,7 +15,10 @@ const persona = {
     mascota,
     curso
 };
-console.log(persona);
+
+//console.log(persona);
 
 // Acceso a datos.
+
+console.log(persona.nombre);
 
