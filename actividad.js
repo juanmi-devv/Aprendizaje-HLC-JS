@@ -4,7 +4,7 @@
 //   Cadena de texto a mostrar en la ventana
 //alert("El dato es: " + datoDelUsuario)
 
-// Pedir dato par o imparr.
+// Pedir dato par o impar.
 /*
 let num = Number(prompt("Dame un número y sabrás si es par o impar:"))
 
@@ -13,6 +13,9 @@ if (num % 2 === 0) {
 } else {
     alert("El número " + num + " es IMPAR.");
 }
+
+
+
 
 // Pedir dos numeros y decir cual es el mayor o si son iguales.
 
@@ -24,16 +27,29 @@ if (num1 > num2) {
 }   else if (num2 > num1) {
         alert("El segundo número es mayor que el primero")
 }
+    else (num1 === num2);{
+        alert("Los dos números son iguales")
+    }
 
 
 
-// Pedir un numero y mostrar todas las iteraciones desde 1 hasta ese numero.
 
-let x = Number(prompt("Introduce un número y se mostrará en pantalla desde 1 hasta ese número"))
+
+
+
+
+// Pedir un numero y mostrar todas las iteraciones desde 1 hasta ese numero por consola.
+
+let x = Number(prompt("Introduce un número"));
 
 for (let i = 1; i <= x; i++) {
-    alert(i)
+    console.log(i);
 }
+
+
+
+
+
 
 
 // Pedir numero y mostrar tabla de multiplicar.
@@ -42,18 +58,50 @@ let numero = Number(prompt("Introduce un numero del 1 al 10 para que se muestre 
 
 for (let i = 1; i <= 10; i++) {
     let resultado = numero * i
-    alert(numero + " x " + i + " = " + resultado)
+    console.log(numero + " x " + i + " = " + resultado)
 }
 */
 
-// 5.	Pedir un número y calcular la suma de todos los números desde 1 hasta dicho número.
 
-let numeros = Number(prompt("Introduce un número y se mostrará el resultado todos los numeros desde 1 hasta el número:"))
 
-for (let y = 1; y <= numeros; y) {
-    alert(y)
+
+/*
+// Pedir un número y calcular la suma de todos los números desde 1 hasta dicho número.
+
+let numero = Number(prompt("Introduce un número:"));
+
+// Variable para acumular la suma
+let suma = 0;
+
+// Bucle para sumar desde 1 hasta el número dado
+for (let i = 1; i <= numero; i++) {
+    suma += i;
 }
 
-// Generación de numero aleatorio enter 1 y 20, el usuario debe adivinarlo.
+// Mostrar el resultado
+alert("La suma desde 1 hasta " + numero + " es: " + suma);
+*/
 
 
+
+
+
+// Generar un numero aleatorio del 1 al 20 y que el usuario intente adivinarlo. El usuario puede rendirse poniendo 0.
+let numeroSecreto = Math.floor(Math.random() * 20) + 1; // Aquí se genera el número aleatorio entre 1 y 20.
+let intento; // Variable para almacenar el intento del usuario.
+do {
+    intento = Number(prompt("Adivina el número secreto (entre 1 y 20). Pon 0 para rendirte:")); // Pedir el número.
+    if (intento === 0) { // El usuario se rinde.
+        alert("Te has rendido. El número secreto era: " + numeroSecreto);
+        break;
+    }
+    if (intento < numeroSecreto) { // Comparar el intento con el número secreto.
+        alert("Demasiado bajo. Intenta de nuevo.");
+    } else if (intento > numeroSecreto) { // Comparar el intento con el número secreto siendo este mayor.
+        alert("Demasiado alto. Intenta de nuevo.");
+    }
+} while (intento !== numeroSecreto); // Repetir hasta que el usuario adivine el número o se rinda.
+
+if (intento === numeroSecreto) { // El usuario ha adivinado el número.
+    alert("¡Felicidades! Has adivinado el número secreto: " + numeroSecreto);
+}
